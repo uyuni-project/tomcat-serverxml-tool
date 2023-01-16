@@ -32,16 +32,14 @@ public class ApplyStylesheet {
     static Document document;
 
     public static void main(String[] argv) {
-        if (argv.length != 4 && argv.length != 5) {
-            System.err.println("Usage: java com.suse.tcserverxml.ApplyStylesheet stylesheet serverXmlFile docBase path [contextXmlFile]");
+        if (argv.length < 2 ) {
+            System.err.println("Usage: <script> file.xslt [arg=val]...");
             System.exit(1);
         }
 
         String stylesheet = argv[0];
-        File datafile = new File(argv[1]);
-        String docBase = argv[2];
-        String path = argv[3];
-        String contextXml = argv.length > 4 ? argv[4] : null;
+        String data = argv[1];
+        File datafile = new File(data);
 
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         try {
@@ -53,11 +51,14 @@ public class ApplyStylesheet {
             InputStream styleInput = ApplyStylesheet.class.getResourceAsStream(stylesheet);
             StreamSource styleSource = new StreamSource(styleInput);
             Transformer transformer = xsltFactory.newTransformer(styleSource);
-
-            transformer.setParameter("docBase", docBase);
-            transformer.setParameter("path", path.startsWith("/") ? path : "/" + path);
-            if (contextXml != null) {
-                transformer.setParameter("contextXml", contextXml);
+            for(int i = 2 ; i < argv.length ; i++) {
+                if (!argv[i].contains("=")) {
+                    System.err.println("Error with arg " + argv[i] + ". = is missing");
+                    System.exit(1);
+                }
+                String arg = argv[i].split("=")[0];
+                String val = argv[i].split("=")[1];
+                transformer.setParameter(arg, val);
             }
 
             DOMSource source = new DOMSource(document);
