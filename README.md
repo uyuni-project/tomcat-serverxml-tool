@@ -4,7 +4,7 @@ Call `tomcat-serverxml-tool.sh` with arguments for help
 
 ## Example
 ```
-./serverxml-tool.sh add-context.xslt docBase=%{tomcatappdir}/host-manager path=/host-manager contextXml=%{tomcatappdir}/host-manager/META-INF/context.xml
+./serverxml-tool.sh add-context.xslt docBase=/usr/share/tomcat/tomcat-webapps/host-manager path=/host-manager contextXml=/usr/share/tomcat/tomcat-webapps/host-manager/META-INF/context.xml
 ```
 where:
 - `add-context.xslt` is an xslt file in `src/com/suse/tcserverxml/`
