@@ -4,7 +4,7 @@ JAR=/usr/lib/tomcat/serverxmltool.jar
 SERVERXML=/etc/tomcat/server.xml
 
 function usage {
-    echo "Usage: <script> file.xslt [arg=value]..."
+    echo "Usage: tomcat-serverxml-tool.sh file.xslt [arg=value]..."
 }
 
 if [[ -z "$1" ]]; then
