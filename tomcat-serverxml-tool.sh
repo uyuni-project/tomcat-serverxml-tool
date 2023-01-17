@@ -5,6 +5,7 @@ SERVERXML=/etc/tomcat/server.xml
 
 function usage {
     echo "Usage: tomcat-serverxml-tool.sh file.xslt [arg=value]..."
+    echo "Example: https://github.com/uyuni-project/tomcat-serverxml-tool/blob/example/README.md#example"
 }
 
 if [[ -z "$1" ]]; then
