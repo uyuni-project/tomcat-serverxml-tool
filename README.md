@@ -1,5 +1,5 @@
 # Archived project
-This tool has been deprecated, instead it's used `xsltproc` to perform all the changes in server.xml file.
+This tool has been deprecated, instead Uyuni now uses `xsltproc` to perform all the changes in server.xml file.
 If you want to resume work, please contact us at https://lists.opensuse.org/archives/list/devel@lists.uyuni-project.org/ or https://gitter.im/uyuni-project/devel
 
 =====
