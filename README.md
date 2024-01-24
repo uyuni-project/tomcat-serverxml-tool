@@ -3,6 +3,7 @@ This tool has been deprecated, instead it's used `xsltproc` to perform all the c
 If you want to resume work, please contact us at https://lists.opensuse.org/archives/list/devel@lists.uyuni-project.org/ or https://gitter.im/uyuni-project/devel
 
 =====
+
 A simple tool to add/remove tags and elements from/to the `server.xml` file of a Tomcat server.
 
 Call `tomcat-serverxml-tool.sh` without arguments for help
