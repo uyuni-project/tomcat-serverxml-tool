@@ -1,5 +1,5 @@
 # Archived project
-This tool has been deprecated, instead Uyuni now uses `xsltproc` to perform all the changes in server.xml file.
+This tool has been deprecated, instead Tomcat now uses `xsltproc` to perform all the changes in server.xml file.
 If you want to resume work, please contact us at [GitHub Discussions](https://github.com/uyuni-project/uyuni/discussions) or [the `devel` channel at Gitter](https://gitter.im/uyuni-project/devel)
 
 =====
